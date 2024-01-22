@@ -1,14 +1,15 @@
 SELECT  * 
-FROM students 
-WHERE surname 
+FROM `students` 
+WHERE `surname` 
 LIKE  `%o `;
 
-SELECT * 
-FROM exam_student 
-WHERE AVG(vote) > 28;
+SELECT * AVG(`vote`), `exam_id`
+FROM `exam_student` 
+GROUP BY `exam_id`
+HAVING AVG(`vote`) > 28;
 
 SELECT * 
-FROM teachers
-WHERE name
-LIKE `%s% ` AND office_number > 96;
+FROM `teachers`
+WHERE `name`
+LIKE `%s% ` AND `office_number` > 96;
 
